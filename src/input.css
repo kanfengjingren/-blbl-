@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+html {
+    font-size: 14px;
+}
+
+.main-container {
+    width: 1920px;
+    height: 10000px;
+    border-radius: 5px;
+}
+
+.blbl-header {
+    width: 100%;
+    height: 180px;
+    background-image: url(../img/blbl法喜寺2.jpg);
+    background-color: pink;
+}
+
+.blbl-topbar {
+    height: 64px;
+    padding: 0 24px;
+    color: white;
+}
+
+.blbl-topbar-left {}
+
+.blbl-topbar a {
+    margin: 0 20px 0 0;
+}
+
+.blbl-topbar li {
+    padding: 30px 0;
+}
+
+
+.blbl-topbar-search {
+    width: 500px;
+    height: 40px;
+    background-color: rgb(221, 224, 231);
+    border-radius: 8px;
+    color: rgb(113, 118, 124);
+    padding: 0 5px;
+}
+.blbl-topbar-search form {
+    width: 500px;
+    height: 40px;
+}
+.blbl-topbar-search input {
+    width: 380px;
+    height: 32px;
+    margin-right: 10px;
+    outline: none;
+}
+
+
+.blbl-topbar-search button {
+    width: 32px;
+    height: 32px;
+}
+
+.blbl-topbar-right a{
+
+    flex-direction: column;
+    align-items: center;
+    /* 巧计 */
+}
+
+.blbl-category {
+    
+}
