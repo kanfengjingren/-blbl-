@@ -5,7 +5,7 @@ html {
 }
 
 .main-container {
-    width: 1920px;
+    width: 100%;
     height: 10000px;
     border-radius: 5px;
 }
@@ -23,7 +23,7 @@ html {
     color: white;
 }
 
-.blbl-topbar-left {}
+
 
 .blbl-topbar a {
     margin: 0 20px 0 0;
@@ -42,10 +42,12 @@ html {
     color: rgb(113, 118, 124);
     padding: 0 5px;
 }
+
 .blbl-topbar-search form {
     width: 500px;
     height: 40px;
 }
+
 .blbl-topbar-search input {
     width: 380px;
     height: 32px;
@@ -59,7 +61,7 @@ html {
     height: 32px;
 }
 
-.blbl-topbar-right a{
+.blbl-topbar-right a {
 
     flex-direction: column;
     align-items: center;
@@ -73,7 +75,7 @@ html {
     /* border: 1px solid pink; */
 }
 
-.blbl-combine .popular{
+.blbl-combine .popular {
     height: 120px;
     /* align-items: center; */
     /* 你这个伸缩项目得有高度，才能用这个啊 */
@@ -87,20 +89,26 @@ html {
     /* border: 1px solid black; */
     border-radius: 100%;
 }
+
 .popular-items {
+    display: flex;
     height: 72px;
     width: 46px;
     margin-right: 26px;
+    flex-direction: column;
+    align-items: center;
 }
+
 .blbl-combine .channel {
     width: 1230px;
     height: 74px;
     padding-right: 30px;
     display: grid;
-    grid-template-columns: repeat(12,1fr);
+    grid-template-columns: repeat(12, 1fr);
     gap: 10px;
     border-right: 1px solid #E3E5E7;
 }
+
 .blbl-combine .channel-box {
     width: 88px;
     height: 32px;
@@ -112,26 +120,58 @@ html {
     background-color: #F1F2F3;
     color: #61666D;
 }
+
 .blbl-combine .minor-category {
     height: 74px;
     width: 258px;
     display: grid;
     grid-auto-flow: column;
-    grid-template-rows: repeat(2,1fr);
+    grid-template-rows: repeat(2, 1fr);
     column-gap: 0;
     row-gap: 10px;
 }
+
 .minor-category .minor-category-box {
     height: 32px;
     width: 78px;
     /* padding-left: 20px; */
 }
+
 .minor-category .bigger {
     height: 32px;
     width: 102px;
 }
-.minor-category-box svg{
+
+.minor-category-box svg {
     width: 20px;
     height: 20px;
     margin-right: 4px;
+}
+
+.blbl-main {
+    width: 1617px;
+    /* height: 2000px; */
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 240px 240px 300px 300px 300px;
+    gap: 20px;
+    /* grid-auto-rows:240px 240px 300px 300px 300px; */
+    /* grid-auto-flow: dense; */
+
+}
+
+.blbl-main .test{
+    background-color: pink;
+    height: 240px;
+}
+
+.blbl-main .lunbo {
+    background-color: pink;
+    height: 500px;
+    grid-area: 1/1/3/3;
+}
+.blbl-main .blbl-vedio {
+    height: 300px;
+    background-color: skyblue;
 }
