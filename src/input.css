@@ -66,6 +66,72 @@ html {
     /* 巧计 */
 }
 
-.blbl-category {
-    
+.blbl-combine {
+    width: 1617px;
+    height: 120px;
+    margin: 0 auto;
+    /* border: 1px solid pink; */
+}
+
+.blbl-combine .popular{
+    height: 120px;
+    /* align-items: center; */
+    /* 你这个伸缩项目得有高度，才能用这个啊 */
+}
+
+
+
+.popular img {
+    width: 46px;
+    height: 46px;
+    /* border: 1px solid black; */
+    border-radius: 100%;
+}
+.popular-items {
+    height: 72px;
+    width: 46px;
+    margin-right: 26px;
+}
+.blbl-category .channel {
+    width: 1200px;
+    height: 74px;
+    padding-right: 30px;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    gap: 10px;
+    border-right: 1px solid #E3E5E7;
+}
+.blbl-category .channel-box {
+    width: 90px;
+    height: 32px;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #F1F2F3;
+    color: #61666D;
+}
+.blbl-combine .minor-category {
+    height: 74px;
+    width: 258px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(2,1fr);
+    column-gap: 0;
+    row-gap: 10px;
+}
+.minor-category .minor-category-box {
+    height: 32px;
+    width: 78px;
+    /* padding-left: 20px; */
+}
+.minor-category .bigger {
+    height: 32px;
+    width: 102px;
+}
+.minor-category-box svg{
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
 }
