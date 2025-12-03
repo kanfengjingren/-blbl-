@@ -120,6 +120,10 @@ html {
     background-color: #F1F2F3;
     color: #61666D;
 }
+.blbl-combine .channel-box:hover {
+    color: #18191C;
+    background-color: #E3E5E7;
+}
 
 .blbl-combine .minor-category {
     height: 74px;
