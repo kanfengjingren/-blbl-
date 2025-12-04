@@ -217,3 +217,8 @@ html {
 .dot-active {
     background-color: white;
 }
+
+.game:hover .gamehover{
+    display: block !important;
+    /* 要使用important覆盖内联样式 */
+}

@@ -16,7 +16,7 @@
                 <!-- 最上面的是导航栏 -->
                 <!-- 左右两个ul导航栏，夹着中间的搜索框 -->
                 <ul class="blbl-topbar-left flex">
-                    <li>
+                    <li class="">
                         <!-- 做一个显现出来的a标签让我能点击 -->
                         <a href="https://www.bilibili.com/" class="flex ">
                             <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
@@ -45,12 +45,12 @@
                         <!-- 同时div先设置成隐藏 -->
                         <!-- <div></div> -->
                     </li>
-                    <li>
+                    <li class="relative game">
                         <a href="https://www.bilibili.com/">
                             <span>游戏中心</span>
                         </a>
                         <!-- 同时div先设置成隐藏 -->
-                        <!-- <div></div> -->
+                        <div class="gamehover w-[424px] h-[295px] p-5 border-2 border-white bg-amber-700 rounded-md absolute top-[81px] -left-24 z-30" style="display: none;"></div>
                     </li>
                     <li>
                         <a href="https://www.bilibili.com/">
@@ -466,7 +466,7 @@
             </div>
         </div>
         <div class="blbl-main">
-            <div class="lunbo bg-amber-700" style="overflow: hidden;"><!--  -->
+            <div class="lunbo bg-amber-700 overflow-hidden"><!--  -->
 
                 <div class="image-container flex">
                     <img src="./img/法喜寺5.jpg" alt="" class="rounded-t-md">
@@ -755,6 +755,33 @@
 
     }
 
+    {
+        const game = document.querySelector('.game');
+        const gamehover = document.querySelector('.gamehover');
+        const topbar = document.querySelector('.blbl-topbar');
+        // game.addEventListener('mouseenter',()=>{
+        //     console.log('进入了');
+        //     setTimeout(()=>{
+        //         gamehover.style.display = 'block';
+        //     },500);
+            
+        // });
+        // game.addEventListener('mouseleave',()=>{
+        //     console.log('进入了');
+        //     gamehover.style.display = 'none';
+        // });
+
+        //改变定位
+        window.addEventListener('scroll',()=>{
+            //scrollTop:页面被卷走了多少
+            const n = document.documentElement.scrollTop;
+            if(n>=81){
+                //把定位改成fixed定位
+                topbar.style.position = 'fixed';
+                topbar.style.background-color = 'white';
+            }
+        })
+    }
 </script>
 
 </html>
