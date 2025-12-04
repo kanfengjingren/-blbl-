@@ -466,15 +466,20 @@
             </div>
         </div>
         <div class="blbl-main">
-            <div class="lunbo">
+            <div class="lunbo bg-amber-700" style="overflow: hidden;"><!--  -->
+
                 <div class="image-container flex">
+                    <img src="./img/法喜寺5.jpg" alt="" class="rounded-t-md">
+
                     <img src="./img/法喜寺1.jpg" alt="" class="rounded-t-md">
                     <img src="./img/法喜寺2.jpg" alt="" class="rounded-t-md">
                     <img src="./img/法喜寺3.jpg" alt="" class="rounded-t-md">
                     <img src="./img/法喜寺4.jpg" alt="" class="rounded-t-md">
                     <img src="./img/法喜寺5.jpg" alt="" class="rounded-t-md">
+
+                    <img src="./img/法喜寺1.jpg" alt="" class="rounded-t-md">
                 </div>
-                <div class="text-container flex justify-between">
+                <div class="text-container flex justify-between pt-5 px-5 text-xl text-amber-50">
                     <h3>上天竺法喜讲寺</h3>
                     <div class="button-container w-[68px] h-[28px] flex justify-between">
                         <button class="w-[28px] h-[28px] bg-gray-500 p-[8px]">
@@ -495,17 +500,20 @@
                         </button>
                     </div>
                 </div>
-                <ul class="dot-container flex">
-                    <li class="w-5 h-5 bg-gray-600 mr-5 rounded-[20px]"></li>
-                    <li class="w-5 h-5 bg-gray-600 mr-5 rounded-[20px]"></li>
-                    <li class="w-5 h-5 bg-gray-600 mr-5 rounded-[20px]"></li>
-                    <li class="w-5 h-5 bg-gray-600 mr-5 rounded-[20px]"></li>
-                    <li class="w-5 h-5 bg-gray-600 mr-5 rounded-[20px]"></li>
+                <ul class="dot-container flex pt-5 px-5">
+                    <li data-index="1" class="dot w-3 h-3 bg-gray-600 mr-2 rounded-[8px] dot-active"></li>
+                    <li data-index="2" class="dot w-3 h-3 bg-gray-600 mr-2 rounded-[8px]"></li>
+                    <li data-index="3" class="dot w-3 h-3 bg-gray-600 mr-2 rounded-[8px]"></li>
+                    <li data-index="4" class="dot w-3 h-3 bg-gray-600 mr-2 rounded-[8px]"></li>
+                    <li data-index="5" class="dot w-3 h-3 bg-gray-600 mr-2 rounded-[8px]"></li>
                 </ul>
             </div>
+
+
+
             <div class="test"><a href="">
                     <img src="./img/多罗西新书.jpg" class="rounded-md"> </a>
-                <div>
+                <div class="vediohead">
                     <a href="">
                         <h3>【新书首发】下班后签2000本书是什么体验？|《烦恼退散》</h3>
                     </a>
@@ -577,58 +585,50 @@
                 </div>
                 <span>up多罗西123</span>
             </div>
-            <div class="blbl-vedio">9</div>
-            <div class="blbl-vedio">10</div>
-            <div class="blbl-vedio">11</div>
-            <div class="blbl-vedio">12</div>
-            <div class="blbl-vedio">13</div>
-            <div class="blbl-vedio">14</div>
-            <div class="blbl-vedio">15</div>
-            <div class="blbl-vedio">16</div>
-            <div class="blbl-vedio ajaxTest">17</div>
         </div>
     </div>
     <button class="ajaxbutton">ajax测试</button>
 </body>
 <script>
-    let i = 0;
-    const btn = document.querySelector('.click');
-    const grid = document.querySelector('.blbl-main');
-    const ajaxTest = document.querySelectorAll('.blbl-vedio');
-    const ajaxbutton = document.querySelector('.ajaxbutton');
-    btn.addEventListener('click', function () {
-        console.log('出发了');
+    {
+        let i = 0;
+        const btn = document.querySelector('.click');
+        const grid = document.querySelector('.blbl-main');
+        const ajaxTest = document.querySelectorAll('.blbl-vedio');
+        const ajaxbutton = document.querySelector('.ajaxbutton');
+        btn.addEventListener('click', function () {
+            console.log('出发了');
 
-        grid.innerHTML = grid.innerHTML + `<div class="blbl-vedio">8</div>
+            grid.innerHTML = grid.innerHTML + `<div class="blbl-vedio">8</div>
         <div class="blbl-vedio">8</div>
         <div class="blbl-vedio">8</div>
         <div class="blbl-vedio">8</div>
         <div class="blbl-vedio">8</div>`;
-    });
+        });
 
-    //ajax调用尝试
-    ajaxbutton.addEventListener('click', () => {
-        //1、获取ajax对象
-        const xhr = new XMLHttpRequest();
-        //2、初始化，设置请求方法和url
-        xhr.open('GET', 'http://127.0.0.1:8000/server');
-        //3、send发送
-        xhr.send();
-        //4、判断状态处理参数回应
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4) {
-                if (xhr.status >= 200 && xhr.status < 300) {
-                    //最后改成滚动刷新就行了，应该。。。
-                    //处理回应
-                    // ajaxTest.innerHTML = xhr.response;
-                    //这个传过来是JSON字符串，要先转换成数组JSON.parse
-                    let data = JSON.parse(xhr.response);
-                    console.log(data);
-                    console.log(data.url);
-                    for (let j = 0; j < 5; j++) {
-                        const divTest = document.createElement('div');
-                        divTest.classList.add('blbl-vedio');
-                        divTest.innerHTML = `<a href="">
+        //ajax调用尝试
+        ajaxbutton.addEventListener('click', () => {
+            //1、获取ajax对象
+            const xhr = new XMLHttpRequest();
+            //2、初始化，设置请求方法和url
+            xhr.open('GET', 'http://127.0.0.1:8000/server');
+            //3、send发送
+            xhr.send();
+            //4、判断状态处理参数回应
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        //最后改成滚动刷新就行了，应该。。。
+                        //处理回应
+                        // ajaxTest.innerHTML = xhr.response;
+                        //这个传过来是JSON字符串，要先转换成数组JSON.parse
+                        let data = JSON.parse(xhr.response);
+                        console.log(data);
+                        console.log(data.url);
+                        for (let j = 0; j < 5; j++) {
+                            const divTest = document.createElement('div');
+                            divTest.classList.add('blbl-vedio');
+                            divTest.innerHTML = `<a href="">
                             <img src="${data.url}" class="rounded-md"> </a>
                             <div class="vediohead">
                                 <a href="">
@@ -637,15 +637,124 @@
                             <div style="display: none;">展开</div>
                         </div>
                     <span>${data.upName}</span>`;
-                        //再把这个插入
+                            //再把这个插入
 
-                        grid.append(divTest);
+                            grid.append(divTest);
+                        }
+
                     }
-
                 }
             }
+        });
+    }
+    //轮播图逻辑
+    {
+        let i = 1;
+
+        let timeId;
+        let timer = null;
+        const lunbo = document.querySelector('.lunbo');
+        const lunboText = document.querySelector('.lunbo h3');
+        const width = lunbo.clientWidth;
+        const allDot = document.querySelectorAll('.dot-container li');
+        const dotContainer = document.querySelector('.dot-container');
+        const allImg = document.querySelector('.image-container');
+        //事先设置位置
+        allImg.style.transform = `translate(${-width}px)`;
+        const btns = document.querySelectorAll('.button-container button');
+        const text = ['上天竺法喜讲寺', '缎带', '鸟', '墙', '大雄宝殿'];
+
+        lunbo.addEventListener('mouseenter', () => {
+            clearInterval(timeId)
+        });
+        lunbo.addEventListener('mouseleave', () => {
+            timeId = setInterval(nextImg, 3000);
+        });
+        const nextImg = () => {
+            i++;
+            console.log(i);
+            //  0 1 2 3 4 5
+            //  1 2 3 4 5 6 7
+            //5 1 2 3 4 5 1
+            if (i < 6) {
+                imgTrans(i);
+            } else {
+                //先让它展现第六张
+                allImg.style.transform = `translate(${-(i * width)}px)`;
+                lunboText.innerHTML = text[0];
+                clearActive();
+                allDot[0].classList.add('dot-active');
+                //过渡动画结束之后，立马关闭动画效果跳转到第一张
+                allImg.addEventListener('transitionend', () => {
+                    //'transitionend'
+                    //先关闭动画，再跳转
+                    allImg.style.transition = 'none';
+                    i = 1;
+                    allImg.style.transform = `translate(${-i * width}px)`;
+                }, { once: true });//用来判断动画是否结束
+
+            }
+            allImg.style.transition = 'all .8s';
         }
-    });
+
+        const preImg = () => {
+            i--;
+            if (i > 0) {
+                imgTrans(i);
+            } else {
+                allImg.style.transform = `translate(${-(i * width)}px)`;
+                lunboText.innerHTML = text[4];
+                clearActive();
+                allDot[4].classList.add('dot-active');
+                allImg, addEventListener('transitionend', () => {
+                    allImg.style.transition = 'none';
+                    i = 5;
+                    allImg.style.transform = `translate(${-(i * width)}px)`;
+                }, { once: true });
+            }
+            allImg.style.transition = 'all .8s';
+        }
+        timeId = setInterval(nextImg, 3000);
+
+        const clearActive = () => {
+            allDot.forEach((dot) => {
+                dot.classList.remove('dot-active');
+            });
+        }
+        //直接抽成一个函数
+        //节流，我不想让短时键内点击多次
+        const throttle = (fn, t) => {
+
+            return function () {
+                if (!timer) {
+                    fn();
+                    timer = setTimeout(() => {
+                        timer = null;
+                    }, t)
+                }
+            }
+            //这样实际的timer，不会每次点击都是不同的timer而导致每次都能执行吗
+        }//函数提升是怎么一回事
+        //箭头函数没有函数提升。。。
+        const imgTrans = (index) => {
+            allImg.style.transform = `translate(${-(index * width)}px)`;
+            lunboText.innerHTML = text[index - 1];
+            clearActive();
+            allDot[index - 1].classList.add('dot-active');
+        }
+        btns[0].addEventListener('click', throttle(preImg, 800));
+        btns[1].addEventListener('click', throttle(nextImg, 800));
+
+        //点击下方小点  e.target.classList.contains('dot')
+        dotContainer.addEventListener('click', (e) => {
+            if (e.target.classList.contains('dot')) {
+                i = Number(e.target.dataset.index);
+                imgTrans(i);
+            }
+        });
+
+    }
+
 </script>
 
 </html>

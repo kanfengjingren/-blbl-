@@ -169,14 +169,14 @@ html {
     /* border-radius: 6px; */
 }
 .blbl-main .test{
-    background-color: pink;
+    /* background-color: pink; */
     height: 240px;
     border-radius: 6px;
 }
 
 .blbl-main .lunbo {
     /* background-image: url(../img/法喜寺1.jpg); */
-    background-color: pink;
+    /* background-color: pink; */
     height: 500px;
     grid-area: 1/1/3/3;
     border-radius: 6px;
@@ -184,7 +184,7 @@ html {
 
 .lunbo .image-container {
     width: 100%;
-    
+    transition: all .8s;
 }
 .image-container img {
     height: 400px;
@@ -212,4 +212,8 @@ html {
 }
 .vediohead a:hover{
     color: rgb(72, 174, 241);
+}
+
+.dot-active {
+    background-color: white;
 }
