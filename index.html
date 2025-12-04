@@ -12,7 +12,7 @@
 <body>
     <div class="main-container">
         <div class="blbl-header">
-            <div class="blbl-topbar flex justify-between items-center">
+            <div class="blbl-topbar flex justify-between items-center z-10">
                 <!-- 最上面的是导航栏 -->
                 <!-- 左右两个ul导航栏，夹着中间的搜索框 -->
                 <ul class="blbl-topbar-left flex">
@@ -50,7 +50,8 @@
                             <span>游戏中心</span>
                         </a>
                         <!-- 同时div先设置成隐藏 -->
-                        <div class="gamehover w-[424px] h-[295px] p-5 border-2 border-white bg-amber-700 rounded-md absolute top-[81px] -left-24 z-30" style="display: none;"></div>
+                        <div class="gamehover w-[424px] h-[295px] p-5 border-2 border-white bg-amber-700 rounded-md absolute top-[81px] -left-24 z-30"
+                            style="display: none;"></div>
                     </li>
                     <li>
                         <a href="https://www.bilibili.com/">
@@ -105,6 +106,13 @@
 
                 </div>
                 <ul class="blbl-topbar-right flex">
+                    <li class="my-head">
+
+                        <a href="https://www.bilibili.com/" class="flex">
+                            <img src="./img/头像.jpg" alt="" class="w-12 rounded-full border-2 border-white">
+                        </a>
+
+                    </li>
                     <li>
                         <!-- 做一个显现出来的a标签让我能点击 -->
                         <a href="https://www.bilibili.com/" class="flex">
@@ -756,6 +764,8 @@
     }
 
     {
+        
+        const grid = document.querySelector('.blbl-main');
         const game = document.querySelector('.game');
         const gamehover = document.querySelector('.gamehover');
         const topbar = document.querySelector('.blbl-topbar');
@@ -764,7 +774,7 @@
         //     setTimeout(()=>{
         //         gamehover.style.display = 'block';
         //     },500);
-            
+
         // });
         // game.addEventListener('mouseleave',()=>{
         //     console.log('进入了');
@@ -772,13 +782,70 @@
         // });
 
         //改变定位
-        window.addEventListener('scroll',()=>{
+        window.addEventListener('scroll', () => {
+
+            //获取一下当前body的总长，如果接近了，就ajax调用
+            const bodyheight = document.documentElement.scrollHeight;
+            console.log('我是scrollHeight' + bodyheight);
+
             //scrollTop:页面被卷走了多少
             const n = document.documentElement.scrollTop;
-            if(n>=81){
+            console.log('我是scrollTop' + n);
+
+            if (n >= 81) {
                 //把定位改成fixed定位
                 topbar.style.position = 'fixed';
-                topbar.style.background-color = 'white';
+                topbar.style.backgroundColor = 'white';
+                topbar.style.color = 'black';
+
+            } else {
+                topbar.style.position = 'relative';
+                topbar.style.backgroundColor = '';
+                topbar.style.color = 'white';
+            }
+
+            const chazhi = bodyheight - n - 970;
+
+
+            if (chazhi < 100) {
+
+                //1、获取ajax对象
+                const xhr = new XMLHttpRequest();
+                //2、初始化，设置请求方法和url
+                xhr.open('GET', 'http://127.0.0.1:8000/server');
+                //3、send发送
+                xhr.send();
+                //4、判断状态处理参数回应
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4) {
+                        if (xhr.status >= 200 && xhr.status < 300) {
+                            //最后改成滚动刷新就行了，应该。。。
+                            //处理回应
+                            // ajaxTest.innerHTML = xhr.response;
+                            //这个传过来是JSON字符串，要先转换成数组JSON.parse
+                            let data = JSON.parse(xhr.response);
+                            console.log(data);
+                            console.log(data.url);
+                            for (let j = 0; j < 5; j++) {
+                                const divTest = document.createElement('div');
+                                divTest.classList.add('blbl-vedio');
+                                divTest.innerHTML = `<a href="">
+                            <img src="${data.url}" class="rounded-md"> </a>
+                            <div class="vediohead">
+                                <a href="">
+                                ${data.head}</h3>
+                                </a>
+                            <div style="display: none;">展开</div>
+                        </div>
+                    <span>${data.upName}</span>`;
+                                //再把这个插入
+
+                                grid.append(divTest);
+                            }
+
+                        }
+                    }
+                }
             }
         })
     }

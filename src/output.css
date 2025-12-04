@@ -180,17 +180,14 @@
   .relative {
     position: relative;
   }
-  .sticky {
-    position: sticky;
-  }
-  .top-0 {
-    top: calc(var(--spacing) * 0);
-  }
   .top-\[81px\] {
     top: 81px;
   }
   .-left-24 {
     left: calc(var(--spacing) * -24);
+  }
+  .z-10 {
+    z-index: 10;
   }
   .z-30 {
     z-index: 30;
@@ -207,9 +204,6 @@
   .grid {
     display: grid;
   }
-  .table {
-    display: table;
-  }
   .h-3 {
     height: calc(var(--spacing) * 3);
   }
@@ -222,6 +216,9 @@
   .w-3 {
     width: calc(var(--spacing) * 3);
   }
+  .w-12 {
+    width: calc(var(--spacing) * 12);
+  }
   .w-\[28px\] {
     width: 28px;
   }
@@ -231,14 +228,8 @@
   .w-\[424px\] {
     width: 424px;
   }
-  .border-collapse {
-    border-collapse: collapse;
-  }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
-  }
-  .resize {
-    resize: both;
   }
   .items-center {
     align-items: center;
@@ -258,16 +249,15 @@
   .rounded-\[8px\] {
     border-radius: 8px;
   }
+  .rounded-full {
+    border-radius: calc(infinity * 1px);
+  }
   .rounded-md {
     border-radius: var(--radius-md);
   }
   .rounded-t-md {
     border-top-left-radius: var(--radius-md);
     border-top-right-radius: var(--radius-md);
-  }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
   }
   .border-2 {
     border-style: var(--tw-border-style);
@@ -304,13 +294,6 @@
   .text-amber-50 {
     color: var(--color-amber-50);
   }
-  .underline {
-    text-decoration-line: underline;
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
-  }
   .transition {
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
@@ -331,6 +314,7 @@ html {
   background-color: pink;
 }
 .blbl-topbar {
+  width: 100%;
   height: 64px;
   padding: 0 24px;
   color: white;
@@ -481,6 +465,10 @@ html {
 .game:hover .gamehover {
   display: block !important;
 }
+.my-head:hover {
+  transform: scale(2) translate(-10px,20px);
+  transition: all .5s;
+}
 @property --tw-rotate-x {
   syntax: "*";
   inherits: false;
@@ -506,11 +494,6 @@ html {
   inherits: false;
   initial-value: solid;
 }
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
@@ -520,7 +503,6 @@ html {
       --tw-skew-x: initial;
       --tw-skew-y: initial;
       --tw-border-style: solid;
-      --tw-outline-style: solid;
     }
   }
 }
