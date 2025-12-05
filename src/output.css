@@ -8,6 +8,7 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-amber-50: oklch(98.7% 0.022 95.277);
+    --color-amber-200: oklch(92.4% 0.12 95.746);
     --color-amber-700: oklch(55.5% 0.163 48.998);
     --color-gray-500: oklch(55.1% 0.027 264.364);
     --color-gray-600: oklch(44.6% 0.03 256.802);
@@ -180,14 +181,26 @@
   .relative {
     position: relative;
   }
+  .top-\[75px\] {
+    top: 75px;
+  }
   .top-\[81px\] {
     top: 81px;
   }
   .-left-24 {
     left: calc(var(--spacing) * -24);
   }
+  .-left-\[150px\] {
+    left: calc(150px * -1);
+  }
+  .z-1 {
+    z-index: 1;
+  }
   .z-10 {
     z-index: 10;
+  }
+  .z-20 {
+    z-index: 20;
   }
   .z-30 {
     z-index: 30;
@@ -213,6 +226,9 @@
   .h-\[295px\] {
     height: 295px;
   }
+  .h-\[470px\] {
+    height: 470px;
+  }
   .w-3 {
     width: calc(var(--spacing) * 3);
   }
@@ -224,6 +240,9 @@
   }
   .w-\[68px\] {
     width: 68px;
+  }
+  .w-\[300px\] {
+    width: 300px;
   }
   .w-\[424px\] {
     width: 424px;
@@ -259,12 +278,22 @@
     border-top-left-radius: var(--radius-md);
     border-top-right-radius: var(--radius-md);
   }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
   .border-2 {
     border-style: var(--tw-border-style);
     border-width: 2px;
   }
+  .border-gray-500 {
+    border-color: var(--color-gray-500);
+  }
   .border-white {
     border-color: var(--color-white);
+  }
+  .bg-amber-200 {
+    background-color: var(--color-amber-200);
   }
   .bg-amber-700 {
     background-color: var(--color-amber-700);
@@ -286,6 +315,15 @@
   }
   .pt-5 {
     padding-top: calc(var(--spacing) * 5);
+  }
+  .pr-6 {
+    padding-right: calc(var(--spacing) * 6);
+  }
+  .pb-\[18px\] {
+    padding-bottom: 18px;
+  }
+  .pl-6 {
+    padding-left: calc(var(--spacing) * 6);
   }
   .text-xl {
     font-size: var(--text-xl);
@@ -465,9 +503,12 @@ html {
 .game:hover .gamehover {
   display: block !important;
 }
-.my-head:hover {
-  transform: scale(2) translate(-10px,20px);
+.my-head:hover a {
+  transform: scale(2) translate(-10px,10px);
   transition: all .5s;
+}
+.my-head:hover .my-xinxi {
+  display: block !important;
 }
 @property --tw-rotate-x {
   syntax: "*";

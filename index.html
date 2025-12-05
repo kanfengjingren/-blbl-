@@ -106,12 +106,12 @@
 
                 </div>
                 <ul class="blbl-topbar-right flex">
-                    <li class="my-head">
+                    <li class="relative my-head">
 
-                        <a href="https://www.bilibili.com/" class="flex">
+                        <a href="https://www.bilibili.com/" class="flex relative z-20">
                             <img src="./img/头像.jpg" alt="" class="w-12 rounded-full border-2 border-white">
                         </a>
-
+                        <div style="display: none;" class="my-xinxi z-1 w-[300px] h-[470px] border bg-amber-200 border-gray-500 rounded-md  absolute top-[75px] -left-[150px] pr-6 pl-6 pb-[18px] "></div>
                     </li>
                     <li>
                         <!-- 做一个显现出来的a标签让我能点击 -->
@@ -241,7 +241,7 @@
 
                 </ul>
             </div>
-            <button class="click">click me</button>
+
         </div>
 
         <div class="blbl-combine flex items-center justify-between">
@@ -593,68 +593,56 @@
                 </div>
                 <span>up多罗西123</span>
             </div>
+            <div class="blbl-vedio">
+                <a href="">
+                    <img src="./img/多罗西新书.jpg" class="rounded-md"> </a>
+                <div class="vediohead">
+                    <a href="">
+                        <h3>【新书首发】下班后签2000本书是什么</h3>
+                    </a>
+                    <div style="display: none;">展开</div>
+                </div>
+                <span>up多罗西123</span>
+            </div>
+            <div class="blbl-vedio">
+                <a href="">
+                    <img src="./img/多罗西新书.jpg" class="rounded-md"> </a>
+                <div class="vediohead">
+                    <a href="">
+                        <h3>【新书首发】下班后签2000本书是什么</h3>
+                    </a>
+                    <div style="display: none;">展开</div>
+                </div>
+                <span>up多罗西123</span>
+            </div>
+            <div class="blbl-vedio">
+                <a href="">
+                    <img src="./img/多罗西新书.jpg" class="rounded-md"> </a>
+                <div class="vediohead">
+                    <a href="">
+                        <h3>【新书首发】下班后签2000本书是什么</h3>
+                    </a>
+                    <div style="display: none;">展开</div>
+                </div>
+                <span>up多罗西123</span>
+            </div>
+            <div class="blbl-vedio">
+                <a href="">
+                    <img src="./img/多罗西新书.jpg" class="rounded-md"> </a>
+                <div class="vediohead">
+                    <a href="">
+                        <h3>【新书首发】下班后签2000本书是什么</h3>
+                    </a>
+                    <div style="display: none;">展开</div>
+                </div>
+                <span>up多罗西123</span>
+            </div>
+
         </div>
     </div>
-    <button class="ajaxbutton">ajax测试</button>
+
 </body>
 <script>
-    {
-        let i = 0;
-        const btn = document.querySelector('.click');
-        const grid = document.querySelector('.blbl-main');
-        const ajaxTest = document.querySelectorAll('.blbl-vedio');
-        const ajaxbutton = document.querySelector('.ajaxbutton');
-        btn.addEventListener('click', function () {
-            console.log('出发了');
-
-            grid.innerHTML = grid.innerHTML + `<div class="blbl-vedio">8</div>
-        <div class="blbl-vedio">8</div>
-        <div class="blbl-vedio">8</div>
-        <div class="blbl-vedio">8</div>
-        <div class="blbl-vedio">8</div>`;
-        });
-
-        //ajax调用尝试
-        ajaxbutton.addEventListener('click', () => {
-            //1、获取ajax对象
-            const xhr = new XMLHttpRequest();
-            //2、初始化，设置请求方法和url
-            xhr.open('GET', 'http://127.0.0.1:8000/server');
-            //3、send发送
-            xhr.send();
-            //4、判断状态处理参数回应
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4) {
-                    if (xhr.status >= 200 && xhr.status < 300) {
-                        //最后改成滚动刷新就行了，应该。。。
-                        //处理回应
-                        // ajaxTest.innerHTML = xhr.response;
-                        //这个传过来是JSON字符串，要先转换成数组JSON.parse
-                        let data = JSON.parse(xhr.response);
-                        console.log(data);
-                        console.log(data.url);
-                        for (let j = 0; j < 5; j++) {
-                            const divTest = document.createElement('div');
-                            divTest.classList.add('blbl-vedio');
-                            divTest.innerHTML = `<a href="">
-                            <img src="${data.url}" class="rounded-md"> </a>
-                            <div class="vediohead">
-                                <a href="">
-                                ${data.head}</h3>
-                                </a>
-                            <div style="display: none;">展开</div>
-                        </div>
-                    <span>${data.upName}</span>`;
-                            //再把这个插入
-
-                            grid.append(divTest);
-                        }
-
-                    }
-                }
-            }
-        });
-    }
     //轮播图逻辑
     {
         let i = 1;
@@ -764,7 +752,7 @@
     }
 
     {
-        
+
         const grid = document.querySelector('.blbl-main');
         const game = document.querySelector('.game');
         const gamehover = document.querySelector('.gamehover');
@@ -805,6 +793,7 @@
             }
 
             const chazhi = bodyheight - n - 970;
+            //这里要减去你视口的高度嘛，这样才对
 
 
             if (chazhi < 100) {

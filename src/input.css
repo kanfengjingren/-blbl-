@@ -223,9 +223,13 @@ html {
     display: block !important;
     /* 要使用important覆盖内联样式 */
 }
-.my-head:hover {
-    transform: scale(2) translate(-10px,20px);
+.my-head:hover  a{
+    transform: scale(2) translate(-10px,10px);
     
     transition: all .5s;
-    
+    /* 这个逻辑才对，整个模块被按住，但是只有a会被放大 */
+    /* 150 */
+}
+.my-head:hover .my-xinxi {
+    display: block !important;
 }
