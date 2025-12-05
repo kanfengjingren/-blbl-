@@ -91,9 +91,10 @@
                         <!-- <div></div> -->
                     </li>
                 </ul>
-                <div class="blbl-topbar-search flex justify-between items-center">
+                <div
+                    class="blbl-topbar-search flex justify-between items-center border border-[#E3E5E7]  w-[500px] h-[40px] bg-[#F1F2F3] rounded-[8px] text-[#61666D] p-[5px]">
                     <form action="" class="flex justify-between items-center">
-                        <input type="text" placeholder="万能青年旅店">
+                        <input type="text" placeholder="万能青年旅店" class="rounded-md w-[450px] h-8 mr-2.5 outline-0 px-1">
                         <button class="flex justify-center items-center">
                             <svg width="17" height="17" viewBox="0 0 17 17" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -105,13 +106,15 @@
                     </form>
 
                 </div>
-                <ul class="blbl-topbar-right flex">
+                <ul class="blbl-topbar-right flex justify-between items-center">
                     <li class="relative my-head">
 
                         <a href="https://www.bilibili.com/" class="flex relative z-20">
                             <img src="./img/头像.jpg" alt="" class="w-12 rounded-full border-2 border-white">
                         </a>
-                        <div style="display: none;" class="my-xinxi z-1 w-[300px] h-[470px] border bg-amber-200 border-gray-500 rounded-md  absolute top-[75px] -left-[150px] pr-6 pl-6 pb-[18px] "></div>
+                        <div style="display: none;"
+                            class="my-xinxi z-1 w-[300px] h-[470px] border bg-white border-gray-500 rounded-md  absolute top-[40px] -left-[150px] pr-6 pl-6 pb-[18px] ">
+                        </div>
                     </li>
                     <li>
                         <!-- 做一个显现出来的a标签让我能点击 -->
@@ -237,6 +240,24 @@
                         </a>
                         <!-- 同时div先设置成隐藏 -->
                         <!-- <div></div> -->
+                    </li>
+                    <li>
+                        <a href="" class="flex">
+                            <div class="flex w-[90px] h-[34px] rounded-md bg-pink-400 items-center justify-center">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" class="header-upload-entry__icon">
+                                    <path
+                                        d="M12.0824 10H14.1412C15.0508 10 15.7882 10.7374 15.7882 11.6471V12.8824C15.7882 13.792 15.0508 14.5294 14.1412 14.5294H3.84707C2.93743 14.5294 2.20001 13.792 2.20001 12.8824V11.6471C2.20001 10.7374 2.93743 10 3.84707 10H5.90589"
+                                        stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                    <path d="M8.99413 11.2353L8.99413 3.82353" stroke="currentColor" stroke-width="1.7"
+                                        stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M12.0823 6.29413L8.9941 3.20589L5.90587 6.29413" stroke="currentColor"
+                                        stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                                <span>投稿</span>
+                            </div>
+                        </a>
                     </li>
 
                 </ul>
@@ -643,6 +664,42 @@
 
 </body>
 <script>
+
+    {
+        const searchDiv = document.querySelector('.blbl-topbar-search');
+        const searchInput = document.querySelector('.blbl-topbar-search input');
+        searchDiv.addEventListener('mouseenter', () => {
+            searchDiv.style.backgroundColor = 'white';
+        });
+        // searchDiv.addEventListener('focusout',()=>{
+        //     searchDiv.style.backgroundColor = '#F1F2F3';
+        // });
+        searchInput.addEventListener('focus', () => {
+
+            searchInput.style.backgroundColor = '#E3E5E7';
+            searchDiv.style.backgroundColor = 'white';
+        });
+        searchInput.addEventListener('focusout', () => {
+
+            searchInput.style.backgroundColor = '#F1F2F3';
+            searchDiv.style.backgroundColor = '#F1F2F3';
+        });
+
+
+        //输入东西之后，发送ajax请求然后出入数据
+        //服务端存储了许多数据，搜索字符，发送含有相同字符的字符串信息过来
+        //检测输入东西，这个靠啥监听？keydown
+        searchInput.addEventListener('keyup', () => {
+            //每次键盘抬起来都检查一次input的值，然后发送到ajax，让服务器发送对应数据回来
+            console.log('这一次的值'+searchInput.value);
+            //获取到值 searchInput.value
+            //发送到服务端
+
+
+        });
+    }
+
+
     //轮播图逻辑
     {
         let i = 1;
@@ -741,6 +798,9 @@
         btns[0].addEventListener('click', throttle(preImg, 800));
         btns[1].addEventListener('click', throttle(nextImg, 800));
 
+
+
+
         //点击下方小点  e.target.classList.contains('dot')
         dotContainer.addEventListener('click', (e) => {
             if (e.target.classList.contains('dot')) {
@@ -751,6 +811,7 @@
 
     }
 
+    //滚动加载页面
     {
 
         const grid = document.querySelector('.blbl-main');
