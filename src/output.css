@@ -13,8 +13,10 @@
     --color-amber-700: oklch(55.5% 0.163 48.998);
     --color-amber-950: oklch(27.9% 0.077 45.635);
     --color-pink-400: oklch(71.8% 0.202 349.761);
+    --color-gray-400: oklch(70.7% 0.022 261.325);
     --color-gray-500: oklch(55.1% 0.027 264.364);
     --color-gray-600: oklch(44.6% 0.03 256.802);
+    --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
     --text-xl: 1.25rem;
@@ -388,6 +390,9 @@
   .text-amber-950 {
     color: var(--color-amber-950);
   }
+  .text-black {
+    color: var(--color-black);
+  }
   .text-white {
     color: var(--color-white);
   }
@@ -414,6 +419,13 @@
       }
     }
   }
+  .hover\:bg-gray-400 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-gray-400);
+      }
+    }
+  }
 }
 html {
   font-size: 14px;
@@ -434,8 +446,14 @@ html {
   padding: 0 24px;
   color: white;
 }
-.blbl-topbar a {
+.blbl-topbar-left a {
   margin: 0 20px 0 0;
+}
+.blbl-topbar-right a {
+  margin: 0 20px 0 0;
+}
+.blbl-topbar li {
+  padding: 30px 0;
 }
 .blbl-topbar-search form {
   width: 500px;

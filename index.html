@@ -18,7 +18,7 @@
                 <ul class="blbl-topbar-left flex">
                     <li class="">
                         <!-- 做一个显现出来的a标签让我能点击 -->
-                        <a href="https://www.bilibili.com/" class="flex ">
+                        <a href="https://www.bilibili.com/" class="flex">
                             <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                                 xmlns="http://www.w3.org/2000/svg" class="zhuzhan-icon">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -39,7 +39,7 @@
                         <!-- <div></div> -->
                     </li>
                     <li>
-                        <a href="https://www.bilibili.com/">
+                        <a href="https://www.bilibili.com/" >
                             <span>直播</span>
                         </a>
                         <!-- 同时div先设置成隐藏 -->
@@ -50,7 +50,7 @@
                             <span>游戏中心</span>
                         </a>
                         <!-- 同时div先设置成隐藏 -->
-                        <div class="gamehover w-[424px] h-[295px] p-5 border-2 border-white bg-amber-700 rounded-md absolute top-[81px] -left-24 z-30"
+                        <div class="gamehover w-[424px] h-[295px] p-5 border-2 border-white bg-white rounded-md absolute top-[81px] -left-24 z-30"
                             style="display: none;"></div>
                     </li>
                     <li>
@@ -109,7 +109,9 @@
                     </div>
                     <div class="z-1 w-[500px] border border-[#E3E5E7] h-[400px] rounded-b-[8px] Exhibition-Area absolute top-[40px] bg-white"
                         style="display: none;">
-                        <a href="https://www.yinhuadm.xyz/p/12752-1-11.html"><p class="h-[40px] text-amber-950 border-b">hello world</p></a>
+                        <a href="https://www.yinhuadm.xyz/p/12752-1-11.html">
+                            <p class="h-[40px] text-amber-950 border-b">hello world</p>
+                        </a>
                     </div>
                 </div>
                 <ul class="blbl-topbar-right flex justify-between items-center">
@@ -120,7 +122,8 @@
                         </a>
                         <div style="display: none;"
                             class="my-xinxi z-1 w-[300px] h-[470px] border bg-white border-gray-500 rounded-md  absolute top-[40px] -left-[150px] pr-6 pl-6 pb-[18px] ">
-                        
+
+
                         </div>
                     </li>
                     <li>
@@ -695,7 +698,7 @@
 
             searchInput.style.backgroundColor = '#F1F2F3';
             searchDiv.style.backgroundColor = '#F1F2F3';
-            exhibitionArea.style.display = 'none';
+            // exhibitionArea.style.display = 'none';
             searchDiv.style.borderRadius = '8px';
         });
 
@@ -719,10 +722,12 @@
                 if (xhr.readyState === 4) {
                     if (xhr.status >= 200 && xhr.status < 300) {
                         let recive = JSON.parse(xhr.response);
-                        
+
                         let str = '';
                         for (let i = 0; i < recive.length; i++) {
-                            str += `<p class="h-[40px] text-amber-950">${recive[i]}</p>`
+                            str += `<a href="">
+                                <p class="hover:bg-gray-400 h-[40px] text-black">${recive[i]}</p>
+                            </a>`
                         }
                         exhibitionArea.innerHTML = str;
                     }
@@ -910,7 +915,7 @@
                             //这个传过来是JSON字符串，要先转换成数组JSON.parse
                             let data = JSON.parse(xhr.response);
                             console.log(data);
-                            
+
                             for (let j = 0; j < 5; j++) {
                                 const divTest = document.createElement('div');
                                 divTest.classList.add('blbl-vedio');
