@@ -9,7 +9,9 @@
       "Courier New", monospace;
     --color-amber-50: oklch(98.7% 0.022 95.277);
     --color-amber-200: oklch(92.4% 0.12 95.746);
+    --color-amber-300: oklch(87.9% 0.169 91.605);
     --color-amber-700: oklch(55.5% 0.163 48.998);
+    --color-amber-950: oklch(27.9% 0.077 45.635);
     --color-pink-400: oklch(71.8% 0.202 349.761);
     --color-gray-500: oklch(55.1% 0.027 264.364);
     --color-gray-600: oklch(44.6% 0.03 256.802);
@@ -182,29 +184,11 @@
   .relative {
     position: relative;
   }
-  .top-\[0px\] {
-    top: 0px;
-  }
-  .top-\[6px\] {
-    top: 6px;
-  }
   .top-\[40px\] {
     top: 40px;
   }
-  .top-\[50px\] {
-    top: 50px;
-  }
-  .top-\[60px\] {
-    top: 60px;
-  }
-  .top-\[75px\] {
-    top: 75px;
-  }
   .top-\[81px\] {
     top: 81px;
-  }
-  .top-\[540px\] {
-    top: 540px;
   }
   .-left-24 {
     left: calc(var(--spacing) * -24);
@@ -239,23 +223,11 @@
   .grid {
     display: grid;
   }
-  .table {
-    display: table;
-  }
-  .h-1 {
-    height: calc(var(--spacing) * 1);
-  }
   .h-3 {
     height: calc(var(--spacing) * 3);
   }
   .h-8 {
     height: calc(var(--spacing) * 8);
-  }
-  .h-10 {
-    height: calc(var(--spacing) * 10);
-  }
-  .h-\[4\] {
-    height: 4;
   }
   .h-\[28px\] {
     height: 28px;
@@ -263,17 +235,14 @@
   .h-\[34px\] {
     height: 34px;
   }
-  .h-\[40\] {
-    height: 40;
-  }
-  .h-\[40p\] {
-    height: 40p;
-  }
   .h-\[40px\] {
     height: 40px;
   }
   .h-\[295px\] {
     height: 295px;
+  }
+  .h-\[400px\] {
+    height: 400px;
   }
   .h-\[470px\] {
     height: 470px;
@@ -284,20 +253,8 @@
   .w-12 {
     width: calc(var(--spacing) * 12);
   }
-  .w-110 {
-    width: calc(var(--spacing) * 110);
-  }
-  .w-\[5\] {
-    width: 5;
-  }
   .w-\[28px\] {
     width: 28px;
-  }
-  .w-\[40px\] {
-    width: 40px;
-  }
-  .w-\[50\] {
-    width: 50;
   }
   .w-\[68px\] {
     width: 68px;
@@ -314,23 +271,11 @@
   .w-\[450px\] {
     width: 450px;
   }
-  .w-\[500\] {
-    width: 500;
-  }
-  .w-\[500p\] {
-    width: 500p;
-  }
   .w-\[500px\] {
     width: 500px;
   }
-  .border-collapse {
-    border-collapse: collapse;
-  }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
-  }
-  .resize {
-    resize: both;
   }
   .items-center {
     align-items: center;
@@ -347,9 +292,6 @@
   .overflow-hidden {
     overflow: hidden;
   }
-  .rounded {
-    border-radius: 0.25rem;
-  }
   .rounded-\[8px\] {
     border-radius: 8px;
   }
@@ -363,11 +305,11 @@
     border-top-left-radius: var(--radius-md);
     border-top-right-radius: var(--radius-md);
   }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
+  .rounded-b-\[8px\] {
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
   }
-  .border-1 {
+  .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
@@ -375,13 +317,9 @@
     border-style: var(--tw-border-style);
     border-width: 2px;
   }
-  .border-\[1\] {
-    border-style: var(--tw-border-style);
-    border-width: 1;
-  }
-  .border-\[1px\] {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
+  .border-b {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 1px;
   }
   .border-\[\#E3E5E7\] {
     border-color: #E3E5E7;
@@ -394,9 +332,6 @@
   }
   .bg-\[\#F1F2F3\] {
     background-color: #F1F2F3;
-  }
-  .bg-amber-200 {
-    background-color: var(--color-amber-200);
   }
   .bg-amber-700 {
     background-color: var(--color-amber-700);
@@ -450,12 +385,11 @@
   .text-amber-50 {
     color: var(--color-amber-50);
   }
-  .underline {
-    text-decoration-line: underline;
+  .text-amber-950 {
+    color: var(--color-amber-950);
   }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
+  .text-white {
+    color: var(--color-white);
   }
   .outline-0 {
     outline-style: var(--tw-outline-style);
@@ -465,6 +399,20 @@
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .hover\:bg-amber-200 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-amber-200);
+      }
+    }
+  }
+  .hover\:bg-amber-300 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-amber-300);
+      }
+    }
   }
 }
 html {
