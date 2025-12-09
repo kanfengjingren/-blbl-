@@ -7,27 +7,32 @@ const app = express();
 
 const vedioList = [
     {
-        url: `./img/多罗西新书.jpg`,
+        url: `https://www.bilibili.com/video/BV1PBCMBrE28/?spm_id_from=333.1387.homepage.video_card.click&vd_source=840dfaa615de778652d5bfe3f31666aa`,
+        imgUrl: `./img/多罗西新书.jpg`,
         head: '【新书首发】下班后签2000本书是什么体验？|《烦恼退散》',
         upName: 'up多罗西123'
     },
     {
-        url: `./img/TheWall.jpg`,
+        url: `https://www.bilibili.com/video/BV1mb4y1z7jG/?spm_id_from=333.1387.favlist.content.click`,
+        imgUrl: `./img/TheWall.jpg`,
         head: '《迷墙》-平克弗洛伊德 全专整柜附字幕',
         upName: 'NikateKiwi'
     },
     {
-        url: `./img/American football.jpg`,
+        url: `https://www.bilibili.com/video/BV1mb4y1z7jG/?spm_id_from=333.1387.favlist.content.click`,
+        imgUrl: `./img/American football.jpg`,
         head: '【HiRes无损音乐】 American Football（美国足球）',
         upName: '看风景人'
     },
     {
-        url: `./img/月之暗面.jpg`,
+        url: `https://www.bilibili.com/video/BV1nL4y147kH/?spm_id_from=333.1387.favlist.content.click&vd_source=840dfaa615de778652d5bfe3f31666aa`,
+        imgUrl: `./img/月之暗面.jpg`,
         head: '5.1 杜比全景声 Pink Floyd - The Dark Side of the Moon',
         upName: '看风景人'
     },
     {
-        url: `./img/black in back.jpg`,
+        url: `https://www.bilibili.com/video/BV1P8R8YTELb/?spm_id_from=333.1387.favlist.content.click`,
+        imgUrl: `./img/black in back.jpg`,
         head: 'AC/DC交流/直流《Back In Black》专辑',
         upName: '看风景人'
     }
@@ -36,6 +41,27 @@ const vedioList = [
 
 ];
 
+app.get('/part-refresh',(request,response)=>{
+    //随机选取六个对象组成新的对象数组，然后JSON化返回
+    let vedioTest = [];
+    for (let i = 0; i < 6; i++) {
+        let randomInRange = Math.floor(Math.random() * (vedioList.length));
+        console.log(randomInRange);
+
+        vedioTest.push(vedioList[randomInRange]);
+    }
+
+    //每个对象都应该有个状态？被选到了就要改成另一种，然后刷新的时候发送一个请求，服务端再全部重置状态
+
+    const data = JSON.stringify(vedioTest);
+    console.log('收到请求');
+    //设置响应头   设置允许跨域
+    response.setHeader('Access-Control-Allow-Origin', '*');
+    response.send(data);
+})
+
+
+
 //3、创建路由规则
 app.get('/server', (request, response) => {
     //随机选取五个对象组成新的对象数组，然后JSON化返回
@@ -43,12 +69,12 @@ app.get('/server', (request, response) => {
     for (let i = 0; i < 5; i++) {
         let randomInRange = Math.floor(Math.random() * (vedioList.length));
         console.log(randomInRange);
-        
+
         vedioTest.push(vedioList[randomInRange]);
     }
 
     //每个对象都应该有个状态？被选到了就要改成另一种，然后刷新的时候发送一个请求，服务端再全部重置状态
-    
+
     const data = JSON.stringify(vedioTest);
     console.log('收到请求');
     //设置响应头   设置允许跨域
@@ -81,8 +107,10 @@ const textArr = ['a',
     '小木曾雪菜',
     '五更琉璃',
     'American football',
-
-];
+    '【新书首发】下班后签2000本书是什么体验？|《烦恼退散》',
+    '《迷墙》-平克弗洛伊德 全专整柜附字幕',
+    '5.1 杜比全景声 Pink Floyd - The Dark Side of the Moon',
+    'AC/DC交流/直流《Back In Black》专辑'];
 
 app.use(express.text());
 //创建一个处理数据的路由规则
