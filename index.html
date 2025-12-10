@@ -460,7 +460,7 @@
 
         </div>
 
-        <div class="blbl-combine flex items-center justify-between z-5 w-[1897px] h-[120px] px-[140px]">
+        <div class="blbl-combine flex items-center justify-between z-5 w-[1617px] h-[120px] mx-auto">
             <!-- 综合 -->
 
             <!-- 分类区 -->
@@ -741,10 +741,10 @@
 
         </div>
     </div>
-    <div class="head_channel fixed top-[64px] w-[1897px] h-[56px] px-[140px] py-[14px] bg-white z-5 border-t border-gray-300 overflow-hidden hover:h-[140px] shadow-md"
+    <div class="head_channel fixed top-[64px] w-full  h-[56px] py-[14px] bg-white z-5 border-t border-gray-300 overflow-hidden hover:h-[140px] shadow-md left-1/2 -translate-x-1/2"
         style="display: none;">
 
-        <div class="channel grid grid-cols-12 gap-[10px] w-[1446px]">
+        <div class="channel grid grid-cols-12 gap-[10px] w-[1446px] mx-auto">
             <!-- 频道 -->
 
             <a href="">
@@ -1098,7 +1098,7 @@
             </a>
         </div>
 
-        <div class="more" style="display: none;"> 
+        <div class="more" style="display: none;">
             <div class="w-[40px] h-[40px] mb-[10px] flex justify-center items-center border border-gray-500 rounded-md">
                 <svg data-v-68b09740="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                     viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
@@ -1323,28 +1323,37 @@
         const topbar = document.querySelector('.blbl-topbar');
         const miniLogo = document.querySelector('.mini-header__logo');
         const headChannel = document.querySelector('.head_channel');
-        // game.addEventListener('mouseenter',()=>{
-        //     console.log('进入了');
-        //     setTimeout(()=>{
-        //         gamehover.style.display = 'block';
-        //     },500);
 
-        // });
-        // game.addEventListener('mouseleave',()=>{
-        //     console.log('进入了');
-        //     gamehover.style.display = 'none';
-        // });
+        let bodyheight = document.documentElement.scrollHeight;
+        let n = document.documentElement.scrollTop;
+        let viewportHeight = window.innerHeight;
+
+
+        console.log(bodyheight);
+        console.log(viewportHeight);
+        
+
+        //还有这种操作的喔，要先加载完
+
+        window.addEventListener('load', startLoad);
+
+
+
 
         //改变定位
         window.addEventListener('scroll', () => {
 
             //获取一下当前body的总长，如果接近了，就ajax调用
-            const bodyheight = document.documentElement.scrollHeight;
+            bodyheight = document.documentElement.scrollHeight;
             console.log('我是scrollHeight' + bodyheight);
 
             //scrollTop:页面被卷走了多少
-            const n = document.documentElement.scrollTop;
+            n = document.documentElement.scrollTop;
             console.log('我是scrollTop' + n);
+
+            viewportHeight = window.innerHeight;
+            console.log(viewportHeight);
+
 
             if (n >= 81) {
                 //把定位改成fixed定位
@@ -1368,33 +1377,39 @@
                 headChannel.style.display = 'none';
             }
 
-            const chazhi = bodyheight - n - 970;
+            const chazhi = bodyheight - n - viewportHeight;
             //这里要减去你视口的高度嘛，这样才对
 
 
             if (chazhi < 100) {
 
-                //1、获取ajax对象
-                const xhr = new XMLHttpRequest();
-                //2、初始化，设置请求方法和url
-                xhr.open('GET', 'http://127.0.0.1:8000/server');
-                //3、send发送
-                xhr.send();
-                //4、判断状态处理参数回应
-                xhr.onreadystatechange = function () {
-                    if (xhr.readyState === 4) {
-                        if (xhr.status >= 200 && xhr.status < 300) {
-                            //最后改成滚动刷新就行了，应该。。。
-                            //处理回应
-                            // ajaxTest.innerHTML = xhr.response;
-                            //这个传过来是JSON字符串，要先转换成数组JSON.parse
-                            let data = JSON.parse(xhr.response);
-                            console.log(data);
+                loading();
+            }
+        })
 
-                            for (let j = 0; j < 5; j++) {
-                                const divTest = document.createElement('div');
-                                divTest.classList.add('blbl-vedio');
-                                divTest.innerHTML = `<a href="${data[j].url}">
+
+        function loading() {
+            //1、获取ajax对象
+            const xhr = new XMLHttpRequest();
+            //2、初始化，设置请求方法和url
+            xhr.open('GET', 'http://127.0.0.1:8000/server');
+            //3、send发送
+            xhr.send();
+            //4、判断状态处理参数回应
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        //最后改成滚动刷新就行了，应该。。。
+                        //处理回应
+                        // ajaxTest.innerHTML = xhr.response;
+                        //这个传过来是JSON字符串，要先转换成数组JSON.parse
+                        let data = JSON.parse(xhr.response);
+                        console.log(data);
+
+                        for (let j = 0; j < 5; j++) {
+                            const divTest = document.createElement('div');
+                            divTest.classList.add('blbl-vedio');
+                            divTest.innerHTML = `<a href="${data[j].url}">
                                     <img src="${data[j].imgUrl}" class="rounded-md"> </a>
                                     <div class="vediohead">
                                         <a href="${data[j].url}">
@@ -1403,16 +1418,40 @@
                                         <div style="display: none;">展开</div>
                                     </div>
                                     <span class="text-[#61666D]">${data[j].upName}</span>`;
-                                //再把这个插入
+                            //再把这个插入
 
-                                grid.append(divTest);
-                            }
-
+                            grid.append(divTest);
                         }
+                        bodyheight = document.documentElement.scrollHeight;
+                        // n = document.documentElement.scrollTop;
+                        viewportHeight = window.innerHeight;
+                        console.log(viewportHeight);
+
                     }
                 }
             }
-        })
+        }
+
+        // let isLoading = false;
+        function startLoad(){
+
+            console.log('执行成功');
+
+            console.log('bodyheight'+bodyheight);
+            console.log('viewportHeight'+viewportHeight);
+            
+            loading();
+            //真奇怪啊，为啥这个会相等的啊。。
+            if(bodyheight < viewportHeight*1.1){
+                setTimeout(startLoad,200);
+            }else{
+                return;
+            }
+        }
+
+
+
+
     }
 
     {
