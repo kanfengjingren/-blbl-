@@ -741,7 +741,7 @@
 
         </div>
     </div>
-    <div class="head_channel fixed top-[64px] w-[1897px] h-[56px] px-[140px] py-[14px] bg-white z-5 border-t overflow-hidden hover:h-[140px] "
+    <div class="head_channel fixed top-[64px] w-[1897px] h-[56px] px-[140px] py-[14px] bg-white z-5 border-t border-gray-300 overflow-hidden hover:h-[140px] shadow-md"
         style="display: none;">
 
         <div class="channel grid grid-cols-12 gap-[10px] w-[1446px]">
@@ -1079,26 +1079,36 @@
                     fill="currentColor"></path>
             </svg>
         </div>
-        <div
-            class="w-[40px] h-[40px] mb-[10px] text-white bg-[#00AEEC] flex justify-center items-center border rounded-md">
-            <svg data-v-68b09740="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                viewBox="0 0 24 24" width="24" height="24" class="btn-icon" fill="currentColor">
-                <path
-                    d="M12 4.5C7.85786 4.5 4.5 7.85786 4.5 12C4.5 16.1421 7.85786 19.5 12 19.5C14.0667 19.5 15.9365 18.6654 17.2941 17.3125C17.6853 16.9226 18.3185 16.9237 18.7083 17.3149C19.0982 17.7061 19.0971 18.3393 18.7059 18.7291C16.9887 20.4404 14.6172 21.5 12 21.5C6.75329 21.5 2.5 17.2467 2.5 12C2.5 6.75329 6.75329 2.5 12 2.5C17.2467 2.5 21.5 6.75329 21.5 12C21.5 12.356 21.4804 12.7078 21.4421 13.0543C21.3814 13.6033 20.8872 13.9991 20.3382 13.9384C19.7893 13.8777 19.3935 13.3835 19.4542 12.8346C19.4844 12.5609 19.5 12.2825 19.5 12C19.5 7.85786 16.1421 4.5 12 4.5z"
-                    fill="currentColor"></path>
-                <path
-                    d="M17.2929 10.7929C17.6834 10.4024 18.3166 10.4024 18.7071 10.7929L20.5 12.5858L22.2929 10.7929C22.6834 10.4024 23.3166 10.4024 23.7071 10.7929C24.0976 11.1834 24.0976 11.8166 23.7071 12.2071L21.3839 14.5303C20.8957 15.0185 20.1043 15.0185 19.6161 14.5303L17.2929 12.2071C16.9024 11.8166 16.9024 11.1834 17.2929 10.7929z"
-                    fill="currentColor"></path>
-            </svg>
+
+        <div class="total-refresh" style="display: none;">
+            <a href="">
+                <div
+                    class="w-[40px] h-[40px] mb-[10px] text-white bg-[#00AEEC] flex justify-center items-center border rounded-md">
+                    <svg data-v-68b09740="" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="24" height="24"
+                        class="btn-icon" fill="currentColor">
+                        <path
+                            d="M12 4.5C7.85786 4.5 4.5 7.85786 4.5 12C4.5 16.1421 7.85786 19.5 12 19.5C14.0667 19.5 15.9365 18.6654 17.2941 17.3125C17.6853 16.9226 18.3185 16.9237 18.7083 17.3149C19.0982 17.7061 19.0971 18.3393 18.7059 18.7291C16.9887 20.4404 14.6172 21.5 12 21.5C6.75329 21.5 2.5 17.2467 2.5 12C2.5 6.75329 6.75329 2.5 12 2.5C17.2467 2.5 21.5 6.75329 21.5 12C21.5 12.356 21.4804 12.7078 21.4421 13.0543C21.3814 13.6033 20.8872 13.9991 20.3382 13.9384C19.7893 13.8777 19.3935 13.3835 19.4542 12.8346C19.4844 12.5609 19.5 12.2825 19.5 12C19.5 7.85786 16.1421 4.5 12 4.5z"
+                            fill="currentColor"></path>
+                        <path
+                            d="M17.2929 10.7929C17.6834 10.4024 18.3166 10.4024 18.7071 10.7929L20.5 12.5858L22.2929 10.7929C22.6834 10.4024 23.3166 10.4024 23.7071 10.7929C24.0976 11.1834 24.0976 11.8166 23.7071 12.2071L21.3839 14.5303C20.8957 15.0185 20.1043 15.0185 19.6161 14.5303L17.2929 12.2071C16.9024 11.8166 16.9024 11.1834 17.2929 10.7929z"
+                            fill="currentColor"></path>
+                    </svg>
+                </div>
+            </a>
         </div>
-        <div class="w-[40px] h-[40px] mb-[10px] flex justify-center items-center border border-gray-500 rounded-md">
-            <svg data-v-68b09740="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-                <path
-                    d="M18.50005 13.62185C17.6035 13.62185 16.87675 12.89505 16.87675 11.99845C16.87675 11.10195 17.6035 10.37514 18.50005 10.37514C19.39665 10.37514 20.1234 11.10195 20.1234 11.99845C20.1234 12.89505 19.39665 13.62185 18.50005 13.62185zM5.49992 13.6219C4.6033 13.6219 3.87644 12.8951 3.87644 11.99845C3.87644 11.1018 4.6033 10.37497 5.49992 10.37497C6.39655 10.37497 7.12342 11.1018 7.12342 11.99845C7.12342 12.8951 6.39655 13.6219 5.49992 13.6219zM10.37357 11.99845C10.37357 12.8959 11.10105 13.6234 11.99845 13.6234C12.8959 13.6234 13.6234 12.8959 13.6234 11.99845C13.6234 11.10105 12.8959 10.37352 11.99845 10.37352C11.10105 10.37352 10.37357 11.10105 10.37357 11.99845z"
-                    fill="currentColor"></path>
-            </svg>
+
+        <div class="more" style="display: none;"> 
+            <div class="w-[40px] h-[40px] mb-[10px] flex justify-center items-center border border-gray-500 rounded-md">
+                <svg data-v-68b09740="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                    <path
+                        d="M18.50005 13.62185C17.6035 13.62185 16.87675 12.89505 16.87675 11.99845C16.87675 11.10195 17.6035 10.37514 18.50005 10.37514C19.39665 10.37514 20.1234 11.10195 20.1234 11.99845C20.1234 12.89505 19.39665 13.62185 18.50005 13.62185zM5.49992 13.6219C4.6033 13.6219 3.87644 12.8951 3.87644 11.99845C3.87644 11.1018 4.6033 10.37497 5.49992 10.37497C6.39655 10.37497 7.12342 11.1018 7.12342 11.99845C7.12342 12.8951 6.39655 13.6219 5.49992 13.6219zM10.37357 11.99845C10.37357 12.8959 11.10105 13.6234 11.99845 13.6234C12.8959 13.6234 13.6234 12.8959 13.6234 11.99845C13.6234 11.10105 12.8959 10.37352 11.99845 10.37352C11.10105 10.37352 10.37357 11.10105 10.37357 11.99845z"
+                        fill="currentColor"></path>
+                </svg>
+            </div>
         </div>
+
         <div class="toTop transition-all" style="display: none;">
             <div
                 class="w-[40px] h-[40px] mb-[10px] flex flex-col justify-center items-center border border-gray-500 rounded-md">
@@ -1111,6 +1121,7 @@
                 <span>顶部</span>
             </div>
         </div>
+
     </div>
 </body>
 <script>
@@ -1433,7 +1444,7 @@
                             </a>
 
                             <div>
-                            <a href="${data[j].imgUrl}" target="_blank">
+                            <a href="${data[j].url}" target="_blank">
                             <h3>${data[j].head}</h3>
                             </a>
                             <div style="display: none;">展开</div>
@@ -1451,6 +1462,8 @@
 
 
         const toTop = document.querySelector('.toTop');
+        const totalRefresh = document.querySelector('.total-refresh');
+        const more = document.querySelector('.more');
         toTop.addEventListener('click', () => {
             window.scrollTo({
                 top: 0,
@@ -1462,10 +1475,13 @@
             let n = document.documentElement.scrollTop;
             if (n > 700) {
                 toTop.style.display = "block";
-                
-            }else{
+                totalRefresh.style.display = 'block';
+                more.style.display = 'block';
+            } else {
                 toTop.style.display = "none";
-                
+                totalRefresh.style.display = "none";
+                more.style.display = "none";
+
             }
         });
     }

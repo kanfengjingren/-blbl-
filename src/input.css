@@ -145,3 +145,7 @@ html {
     
 }
 
+.blbl-topbar-right svg:hover {
+    transform: translate(0,-5px);
+    transition: all .3s;
+}
