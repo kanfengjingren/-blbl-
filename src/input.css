@@ -7,14 +7,15 @@ html {
 
 
 .blbl-header {
-    
+
     background-image: url(../img/blbl法喜寺2.jpg);
-    
+
 }
 
 .blbl-topbar-left a {
     margin: 0 20px 0 0;
 }
+
 .blbl-topbar-right a {
     margin: 0 20px 0 0;
 }
@@ -72,9 +73,10 @@ html {
 .minor-category .minor-category-box {
     height: 32px;
     width: 78px;
-    
+
 }
-.minor-category .bigger{
+
+.minor-category .bigger {
     /* height: 32px;
     width: 102px; */
 }
@@ -92,35 +94,28 @@ html {
     grid-area: 1/1/3/3;
 }
 
-.lunbo .image-container {
-    width: 100%;
-    transition: all .8s;
-}
-.image-container img {
-    height: 400px;
-    width: 100%;
-    /* 使用了flex会导致图片自动收缩 */
-    flex: none;
-    /* flex这个有三个值，直接控制伸长收缩和 */
-}
+
 
 .blbl-main .blbl-vedio {
     height: 300px;
-    
+
     border-radius: 6px;
     padding: 30px 0 20px 0;
 
 }
+
 .test span {
     color: #61666D;
 
 }
+
 .blbl-vedio .vediohead {
     width: 100%;
     height: 44px;
     padding-right: 30px;
 }
-.vediohead a:hover{
+
+.vediohead a:hover {
     color: rgb(72, 174, 241);
 }
 
@@ -128,24 +123,62 @@ html {
     background-color: white;
 }
 
-.game:hover .gamehover{
+.game:hover .gamehover {
     display: block !important;
     /* 要使用important覆盖内联样式 */
 }
-.my-head:hover  a{
-    transform: scale(2) translate(-10px,10px);
-    
+
+.my-head:hover a {
+    transform: scale(2) translate(-10px, 10px);
+
     transition: all .5s;
     /* 这个逻辑才对，整个模块被按住，但是只有a会被放大 */
     /* 150 */
 }
+
 .my-head:hover .my-xinxi {
 
     display: block !important;
-    
+
 }
 
 .blbl-topbar-right svg:hover {
-    transform: translate(0,-5px);
+    transform: translate(0, -5px);
     transition: all .3s;
 }
+
+.lunbo {
+    background: #000;
+}
+.lunbo .image-container {
+    width: 100%;
+    
+    transition: all .8s;
+}
+
+.image-container img {
+    height: 500px;
+    width: 100%;
+    
+    /* 使用了flex会导致图片自动收缩 */
+
+    flex: none;
+    mask-image: linear-gradient(
+        to top,
+        transparent 0%,     /* 底部完全透明 */
+        transparent 20%,    /* 保留20%给文字区域完全透明 */
+        black 30%,          /* 21%处开始渐变到不透明 */
+        black 100%          /* 其余部分完全不透明 */
+    );
+    
+    /* flex这个有三个值，直接控制伸长收缩和 */
+}
+
+.lunbo-navigation {
+    height: 100px;
+  
+
+}
+
+
+

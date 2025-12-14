@@ -1,0 +1,52 @@
+@import "tailwindcss";
+html {
+    font-size: 14px;
+}
+.blbl-topbar-left a {
+    margin: 0 20px 0 0;
+}
+
+.blbl-topbar-right a {
+    margin: 0 20px 0 0;
+}
+
+.blbl-topbar li {
+    padding: 30px 0;
+}
+
+
+.blbl-topbar-right a {
+
+    flex-direction: column;
+    align-items: center;
+    /* 巧计 */
+}
+.my-head:hover a {
+    transform: scale(2) translate(-10px, 10px);
+
+    transition: all .5s;
+    /* 这个逻辑才对，整个模块被按住，但是只有a会被放大 */
+    /* 150 */
+}
+.game:hover .gamehover {
+    display: block !important;
+    /* 要使用important覆盖内联样式 */
+}
+.my-head:hover a {
+    transform: scale(2) translate(-10px, 10px);
+
+    transition: all .5s;
+    /* 这个逻辑才对，整个模块被按住，但是只有a会被放大 */
+    /* 150 */
+}
+
+.my-head:hover .my-xinxi {
+
+    display: block !important;
+
+}
+
+.blbl-topbar-right svg:hover {
+    transform: translate(0, -5px);
+    transition: all .3s;
+}

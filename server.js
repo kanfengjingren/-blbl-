@@ -7,34 +7,40 @@ const app = express();
 
 const vedioList = [
     {
-        url: `https://www.bilibili.com/video/BV1PBCMBrE28/?spm_id_from=333.1387.homepage.video_card.click&vd_source=840dfaa615de778652d5bfe3f31666aa`,
+        videoId :'1',
         imgUrl: `./img/多罗西新书.jpg`,
         head: '【新书首发】下班后签2000本书是什么体验？|《烦恼退散》',
         upName: 'up多罗西123'
     },
     {
-        url: `https://www.bilibili.com/video/BV1mb4y1z7jG/?spm_id_from=333.1387.favlist.content.click`,
+        videoId :'2',
         imgUrl: `./img/TheWall.jpg`,
         head: '《迷墙》-平克弗洛伊德 全专整柜附字幕',
         upName: 'NikateKiwi'
     },
     {
-        url: `https://www.bilibili.com/video/BV1mb4y1z7jG/?spm_id_from=333.1387.favlist.content.click`,
+        videoId :'3',
         imgUrl: `./img/American football.jpg`,
         head: '【HiRes无损音乐】 American Football（美国足球）',
         upName: '看风景人'
     },
     {
-        url: `https://www.bilibili.com/video/BV1nL4y147kH/?spm_id_from=333.1387.favlist.content.click&vd_source=840dfaa615de778652d5bfe3f31666aa`,
+        videoId :'4',
         imgUrl: `./img/月之暗面.jpg`,
         head: '5.1 杜比全景声 Pink Floyd - The Dark Side of the Moon',
         upName: '看风景人'
     },
     {
-        url: `https://www.bilibili.com/video/BV1P8R8YTELb/?spm_id_from=333.1387.favlist.content.click`,
+        videoId :'5',
         imgUrl: `./img/black in back.jpg`,
         head: 'AC/DC交流/直流《Back In Black》专辑',
         upName: '看风景人'
+    },
+    {
+        videoId :'6',
+        imgUrl: `./img/梦想还是爱情？【村上RADIO】.jpg`,
+        head: '梦想还是爱情？【村上RADIO】',
+        upName: '村上春树'
     }
 
 
