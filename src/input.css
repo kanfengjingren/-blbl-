@@ -157,7 +157,7 @@ html {
 }
 
 .image-container img {
-    height: 500px;
+    height: 100%;
     width: 100%;
     
     /* 使用了flex会导致图片自动收缩 */
