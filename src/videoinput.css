@@ -50,3 +50,6 @@ html {
     transform: translate(0, -5px);
     transition: all .3s;
 }
+.active {
+    background-color: hotpink;
+}

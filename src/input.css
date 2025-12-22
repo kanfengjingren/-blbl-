@@ -152,7 +152,7 @@ html {
 }
 .lunbo .image-container {
     width: 100%;
-    
+    height: 500px;
     transition: all .8s;
 }
 
@@ -174,11 +174,7 @@ html {
     /* flex这个有三个值，直接控制伸长收缩和 */
 }
 
-.lunbo-navigation {
-    height: 100px;
-  
 
-}
 
 
 

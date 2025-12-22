@@ -458,15 +458,43 @@
 
     </div>
 
-    <div class="main h-[2000px] w-[1610px] mt-[64px] mx-auto flex">
+    <div class="main w-[1610px] mt-[64px] mx-auto flex">
         <div class="main-left flex-3 pt-[30px]">
             <div class="video-container">
                 <h1 class="text-2xl mb-[10px]">视频标题</h1>
                 <video src="./video/梦想还是爱情？【村上RADIO】.mp4" controls class="w-[1200px] h-[640px] bg-black"></video>
             </div>
 
+            <div class="w-full mt-[20px] border comment">
+
+                <div class="comment-item w-full pt-[22px] pl-[80px] pb-[10px] border-b bg-amber-200 flex">
+                    <div class="avatar w-[50px] h-[50px] rounded-full -ml-[50px] mr-[30px] shrink-0">
+                        <img src="./img/头像.jpg" alt="" class="w-[50px] h-[50px] rounded-full shrink-0">
+                    </div>
+                    <div class="body">
+                        <div class="head h-[40px] text-xl font-medium text-left">Akuma小恶魔</div>
+                        <div class="content">
+                            测试案例测试案例测试案例测试案例测试案例测试案例测试案例测试案例测试案例测试案例测试案例测试案例测试案例测试案例测试案例测试案例测试案例测试案例测试案例测试案例测试案例测试案例测试案例测试案例
+                        </div>
+                        <div class="footer">2025/12/16</div>
+                    </div>
+                </div>
+
+
+            </div>
+            <ul class="comment-page flex mt-[20px]">
+                <!-- <li class="w-[20px] h-[20px] rounded-md border mr-[10px] text-center"><a href="">1</a></li>
+                <li class="w-[20px] h-[20px] rounded-md border mr-[10px] text-center">2</li>
+                <li class="w-[20px] h-[20px] rounded-md border mr-[10px] text-center">3</li>
+                <li class="w-[20px] h-[20px] rounded-md border mr-[10px] text-center">4</li>
+                <li class="w-[20px] h-[20px] rounded-md border mr-[10px] text-center">5</li>
+                <li class="w-[20px] h-[20px] rounded-md border mr-[10px] text-center">6</li>
+                <li class="w-[20px] h-[20px] rounded-md border mr-[10px] text-center">7</li> -->
+            </ul>
         </div>
-        <div class="main-right bg-sky-300 flex-1"></div>
+        <div class="main-right bg-sky-300 flex-1 ml-[7.5px]">
+
+        </div>
     </div>
     <script>
 
@@ -477,45 +505,47 @@
 
         let src;
         let head;
+        let commentText;
         const videoUrl = [
             {
                 videoId: '1',
                 url: `./video/烦恼退散.mp4`,
                 head: '【新书首发】下班后签2000本书是什么体验？|《烦恼退散》',
+                comment:['这个视频太棒了！','内容很有深度','学到了新知识','感谢分享','期待更多内容','讲解清晰易懂','实用性强','观点独特','制作精良','值得收藏','背景音乐很搭','剪辑流畅','主题鲜明','节奏把控好','画面质感不错','信息量很大','逻辑清晰','例子很生动','解决问题的方法很实用','角度新颖','表达方式很吸引人','数据支撑有力','结论有说服力','适合反复观看','对工作有帮助','解决了我的疑惑','引发思考','风格很喜欢','语言简洁明了','结构完整','期待下一期','干货满满','讲解得很透彻','内容贴合实际','分析到位','观点认同','很有启发性','制作团队用心了','视觉效果出色','配图恰当','声音清晰','时长合适','重点突出','容易理解','应用性强','推荐给朋友','看完有收获','专业性强','通俗易懂','覆盖全面','质量很高'],
                 upName: 'up多罗西123'
             },
             {
                 videoId: '2',
                 url: `./video/thewall.mp4`,
-                
+                comment:['非常精彩的内容','点赞支持','看完受益匪浅','分析得很深入','案例典型','讲解耐心细致','节奏紧凑','信息准确','来源可靠','研究方法科学','结论有价值','实践指导性强','适合初学者','进阶内容也有','平衡得很好','图表清晰','数据可视化做得棒','对比分析到位','历史背景介绍清楚','发展趋势预测合理','解决方案可行','成本效益分析全面','风险评估充分','实施步骤详细','注意事项提到位','常见问题解答有用','参考资料齐全','扩展阅读推荐得好','互动环节设计巧妙','测试题有针对性','总结部分精炼','语言幽默风趣','气氛轻松愉快','主题严肃但表达不生硬','技术细节讲解清楚','理论结合实际','跨学科视角独特','文化内涵丰富','情感共鸣强烈','价值观正面','促进思考与讨论','社会意义重大','个人成长有帮助','团队协作可借鉴','时间管理技巧实用','沟通方法有效','创新思维启发','批判性思考引导','情绪管理建议中肯','职业规划指导有用'],
                 head: '《迷墙》-平克弗洛伊德 全专整柜附字幕',
                 upName: 'NikateKiwi'
             },
             {
                 videoId: '3',
                 url: `./video/americanfootball.mp4`,
-                
+                comment:['支持原创内容','创作者辛苦了','更新速度挺快','系列作品连贯性强','角色塑造生动','情节设计巧妙','悬念设置合理','结局令人满意','伏笔回收得好','世界观构建完整','细节处理用心','服装道具考究','场景布置精美','特效制作精良','演员表演到位','导演把控能力强','编剧功底深厚','摄影构图讲究','灯光运用恰当','色彩搭配和谐','配乐贴合情境','音效真实自然','字幕准确无误','翻译质量高','多语言版本贴心','无障碍功能完善','用户界面友好','播放流畅不卡顿','加载速度快','画质清晰度高','支持多设备同步','离线观看方便','搜索功能强大','推荐算法精准','社区氛围良好','用户互动积极','反馈响应及时','问题解决高效','客户服务专业','定价合理透明','会员权益丰富','优惠活动多样','隐私保护到位','数据安全放心','版权管理规范','内容审核严格','价值观导向正确','符合平台规范','遵守法律法规','社会责任履行好'],
                 head: '【HiRes无损音乐】 American Football（美国足球）',
                 upName: '看风景人'
             },
             {
                 videoId: '4',
                 url: `./video/明日方舟大白兔联动主题店.mp4`,
-                
+                comment:['内容质量很高','观点鲜明有力','论据充分详实','逻辑推理严密','研究方法创新','实验设计合理','数据收集全面','统计分析科学','结论可靠有效','应用前景广阔','商业价值明显','社会效益显著','环保理念先进','可持续发展考虑','伦理审查合规','国际合作广泛','跨文化交流顺畅','多元文化包容','弱势群体关注','公平公正体现','透明度高','可重复性强','同行评审认可','学术价值突出','教育意义重大','科普效果良好','公众理解提升','科学素养培养','批判思维训练','解决问题能力锻炼','团队合作体验','领导力发展','创新能力激发','创业指导实用','投资建议中肯','市场分析透彻','行业趋势把握','竞争格局清晰','风险评估准确','机会识别敏锐','战略规划合理','战术执行可行','绩效评估科学','反馈机制完善','持续改进明显','用户体验优化','产品迭代迅速','技术更新及时','服务升级贴心'],
                 head: '5.1 杜比全景声 Pink Floyd - The Dark Side of the Moon',
                 upName: '看风景人'
             },
             {
                 videoId: '5',
                 url: `./video/backinblack.mp4`,
-                
+                comment:['内容引人入胜','风格独具特色','表达富有感染力','情感真挚动人','故事叙述流畅','人物关系复杂但清晰','矛盾冲突合理','主题深刻有意义','文化背景介绍详尽','历史细节还原准确','科学原理讲解通俗','技术操作演示清楚','步骤分解细致','注意事项强调到位','常见错误提醒及时','解决方案提供具体','工具推荐实用','资源分享慷慨','技巧传授无私','经验总结宝贵','教训反思深刻','成功案例分析到位','失败教训总结客观','改进建议中肯','未来展望合理','个人见解独到','专业点评犀利','同行对比公正','优缺点分析全面','平衡把握得当','分寸掌握合适','尺度把控准确','深度广度兼具','宏观微观结合','理论实践并重','传统现代融合','东西方视角平衡','古今对话顺畅','雅俗共赏实现','老少咸宜做到','专业通俗兼顾','入门精通覆盖','基础拓展都有','简单复杂分层','初级高级分明','难度梯度合理','学习路径清晰','进度安排科学','考核方式多样','评价标准明确'],
                 head: 'AC/DC交流/直流《Back In Black》专辑',
                 upName: '看风景人'
             },
             {
                 videoId: '6',
                 url: `./video/梦想还是爱情？【村上RADIO】.mp4`,
-                
+                comment:['内容充实不空洞','形式新颖不落俗','表达生动不枯燥','逻辑严谨不混乱','数据真实不造假','来源可靠不模糊','分析客观不偏颇','结论谨慎不武断','建议可行不空泛','指导具体不抽象','步骤清晰不混乱','方法有效不花哨','工具实用不繁琐','资源优质不低劣','技巧高效不低效','经验宝贵不普通','见解深刻不肤浅','视角独特不平庸','思维创新不守旧','理念先进不落后','态度认真不敷衍','工作细致不粗糙','制作精良不廉价','检验严格不放松','标准高超不降低','要求严格不松懈','责任担当不推诿','诚信守诺不违背','公平公正不偏私','透明公开不隐蔽','及时高效不拖延','持续稳定不中断','安全可靠不危险','便捷易用不复杂','舒适享受不难受','经济实惠不昂贵','环保节能不浪费','可持续性不短视','兼容性强不排斥','扩展性好不局限','维护方便不困难','升级顺利不麻烦','支持全面不缺失','服务周到不疏忽','响应迅速不迟缓','解决彻底不敷衍','反馈认真不草率','改进持续不停滞','发展健康不畸形','未来可期不悲观'],
                 head: '梦想还是爱情？【村上RADIO】',
                 upName: '村上春树'
             }
@@ -524,8 +554,10 @@
             if (id === videoUrl[index].videoId) {
                 src = videoUrl[index].url;
                 head = videoUrl[index].head;
+                commentText = videoUrl[index].comment;
                 console.log(src);
-                
+                console.log(commentText);
+
             }
 
         }
@@ -534,6 +566,73 @@
         <h1 class="text-2xl mb-[10px]">${head}</h1>
                 <video src="${src}" controls class="w-[1200px] h-[640px] bg-black"></video>
         `;
+
+
+        
+            //动态渲染评论
+            //设置评论最大数量
+            const capacity = 10;
+            const totalPage = Math.ceil(commentText.length/capacity);
+            let html = "";
+            const ul = document.querySelector('.comment-page');
+            const commentContainer = document.querySelector('.comment');
+            //Math.ceil();//无论小数多大，进位取整
+            //怎么向ul这个dom对象插入
+            //<li class="w-[20px] h-[20px] rounded-md border mr-[10px] text-center"><a href="">1</a></li>
+            //这样指定个数的li呢？
+
+            //insertAdjacentHTML专业前端都在用
+            for (let index = 1; index < totalPage + 1; index++) {
+                html += `<li class="w-[20px] h-[20px] rounded-md border mr-[10px] text-center"> ${index}</li>`;
+
+            }
+            ul.innerHTML = html;
+
+            loadComment(1);
+            //加载这个页面评论
+            function loadComment(index) {
+                setActive(index);
+                let commentHtml = '';
+                for (let i = 0; i < capacity; i++) {
+                    const commentIndex = (index - 1) * capacity + i;
+                    if (commentIndex < commentText.length) {
+                        commentHtml += `<div class="comment-item w-full pt-[22px] pl-[80px] pb-[10px] border-b bg-amber-200 flex">
+                    <div class="avatar w-[50px] h-[50px] rounded-full -ml-[50px] mr-[30px] shrink-0">
+                        <img src="./img/头像.jpg" alt="" class="w-[50px] h-[50px] rounded-full shrink-0">
+                    </div>
+                    <div class="body">
+                        <div class="head h-[40px] text-xl font-medium text-left">Akuma小恶魔</div>
+                        <div class="content">
+                            ${commentText[commentIndex]}
+                        </div>
+                        <div class="footer">2025/12/16</div>
+                    </div>
+                </div>`
+                    }
+
+
+                }
+                commentContainer.innerHTML = commentHtml;
+            }
+
+            //点击ul里面的li，实现切换页面
+            ul.addEventListener('click', (e) => {
+                //获取到innerhtml，然后调用load
+                if (e.target.tagName === 'LI') {
+                    const index = Number(e.target.textContent.trim());
+                    // setActive(index);
+                    loadComment(index);
+                    console.log(e);
+                    
+                }
+            });
+            function setActive(index){
+                ul.childNodes.forEach(element => {
+                    element.classList.remove('active');
+                });
+                ul.childNodes[index-1].classList.add('active');
+            }
+        
     </script>
 </body>
 
